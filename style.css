@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+:root{
+    --bg-color: #fff;
+    --txt-color: #000;
+}
+
+/*
+#e4e1dc
+#f0b52b
+#e4a920
+*/
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    /*background-image: linear-gradient(to right, #d4cec3 10%, #e4e1dc 50%);*/
+    font-family: 'Lato', sans-serif;
+    color: var(--txt-color);
+}
+
+h1 {
+    text-transform: lowercase;
+}
+
+header {
+    padding: 50px;
+    height: 100vh;
+    width: 350px;
+    position: fixed;
+    color: var(--bg-color);
+    fill: var(--bg-color);
+    z-index: 2;
+    transition: 350ms;
+}
+
+header>h1, header>p, header>a:has(svg) {
+    opacity: 0;
+    animation: 350ms appear;
+    animation-fill-mode: forwards;
+}
+
+header p {
+    font-size: small;
+}
+
+header a:hover {
+    color: #666;
+    fill: #666;
+    transition: 350ms;
+}
+
+header svg {
+    height: 24px;
+    width: 24px;
+    fill: inherit;
+}
+
+header a:has(>svg) svg {
+    margin: 12px 0;
+}
+
+.parallax {
+    background-image: url(background.png);
+    height: 65vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: saturate(150%) brightness(0.8);
+}
+
+main {
+    height: 100vh;
+}
+
+main>section {
+    margin: 50px 50px 50px 500px;
+    background-color: #666;
+    height: 400px;
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
