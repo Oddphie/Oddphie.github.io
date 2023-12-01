@@ -28,12 +28,10 @@
 
     <div class="parallax"></div>
 
-    <main>
-        <section></section>
-        <section></section>
-    </main>
+    <main></main>
 
     <script>
+        const main = document.getElementsByTagName("main")[0];
         const sidebar = document.getElementsByTagName("header")[0];
 
         window.onscroll = function () {
@@ -49,7 +47,37 @@
 
         for (let i = 0; i < sidebar.children.length; i++) {
             sidebar.children[i].style.animationDelay = `calc(500ms + ${i * 150}ms)`;
-            console.log(sidebar.children[i].nodeName)
+        }
+
+        const pages = [
+            { name: "Pet Near Me", desc: "A multi-page website that I completed for assignment two of DXB111 Introduction to Web Design. It was made to be both responsive and accessible. It is purely HTML and CSS.", img: "images/preview-dxb111-a2.png", url: "https://oddphie.github.io/completed_projects/dxb111-a2/" },
+            { name: "Seasharks", desc: "A small webpage that focuses on graphics using svgs.", img: "images/preview-seasharks.png", url: "https://oddphie.github.io/completed_projects/seasharks/" },
+            { name: "Market", desc: "A small webpage that replicates an ecommerce shop.", img: "images/preview-market.png", url: "https://oddphie.github.io/completed_projects/market/" },
+            { name: "Portfolio", desc: "A multi-page website design for a phone that I completed for assignment one of DXB111 Introduction to Web Design.", img: "images/preview-dxb111-a1.png", url: "https://oddphie.github.io/completed_projects/dxb111-a1/" },
+            { name: "Randomiser", desc: "A very small page that I made using Javascript.", img: "images/preview-randomiser.png", url: "https://oddphie.github.io/completed_projects/randomiser/" },
+        ]
+
+        for (const page of pages) {
+            let section = document.createElement("section");
+
+            let preview = document.createElement("img");
+            preview.src = page.img;
+            section.appendChild(preview);
+
+            let header = document.createElement("h2");
+            header.innerText = page.name;
+            section.appendChild(header);
+
+            let desc = document.createElement("p");
+            desc.innerText = page.desc;
+            section.appendChild(desc);
+
+            let link = document.createElement("a");
+            link.href = page.url;
+            link.innerText = "Live preview.";
+            section.appendChild(link);
+
+            main.appendChild(section);
         }
     </script>
 </body>
