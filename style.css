@@ -5,16 +5,9 @@
     --txt-color: #000;
 }
 
-/*
-#e4e1dc
-#f0b52b
-#e4a920
-*/
-
 body {
     margin: 0;
     background-color: var(--bg-color);
-    /*background-image: linear-gradient(to right, #d4cec3 10%, #e4e1dc 50%);*/
     font-family: 'Lato', sans-serif;
     color: var(--txt-color);
 }
