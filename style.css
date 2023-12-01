@@ -20,15 +20,17 @@ h2 {
     font-size: 16px;
 }
 
-p, a {
+p,
+a {
     font-size: small;
 }
 
 header {
     padding: 50px;
-    height: 100vh;
-    width: 350px;
+    max-width: 350px;
     position: fixed;
+    top: 0;
+    left: 0;
     color: var(--bg-color);
     fill: var(--bg-color);
     z-index: 2;
@@ -60,7 +62,7 @@ header a:has(>svg) svg {
 }
 
 .parallax {
-    background-image: url(background.png);
+    background-image: url(banner.png);
     min-height: 350px;
     max-height: 45vh;
     background-attachment: fixed;
@@ -72,19 +74,19 @@ header a:has(>svg) svg {
 main {
     min-height: 100vh;
     padding: 50px;
+    margin-left: 450px;
 }
 
 main>section {
-    margin-left: 450px;
     margin-bottom: 100px;
     max-width: 800px;
 }
 
 main>section img {
     width: 100%;
-    height: 400px;
+    max-height: 400px;
     object-fit: cover;
-    object-position: left;
+    object-position: center;
 }
 
 main>section h2 {
@@ -95,13 +97,31 @@ main>section p {
     margin: 6px 0;
 }
 
-main>section a{
+main>section a {
     color: #666;
     transition: 350ms;
 }
 
-main>section a:hover{
+main>section a:hover {
     color: #999;
+}
+
+@media only screen and (max-width: 1000px) {
+    header {
+        position: absolute;
+    }
+
+    .parallax {
+        height: 100vh;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    main>section img{
+        height: 50%;
+    }
 }
 
 @keyframes appear {
